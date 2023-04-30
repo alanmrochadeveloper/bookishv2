@@ -1,23 +1,15 @@
 import React from 'react';
 import { Typography } from '@mui/material';
+import BookList from './BookList';
 
 function App() {
   const books = [{ name: 'Refactoring' }, { name: 'Domain-driven design' }];
-  const renderBooks = (books) => (
-    <div data-test='book-list'>
-      {
-        books.map(b => (<div className='book-item'>
-          <h2 className="title">{b.name}</h2>
-        </div>))
-      }
-    </div>
-  );
   return (
     <div>
       <Typography variant='h2' component='h2' data-test='heading' >
         Bookish
       </Typography>;
-      {renderBooks(books)}
+      <BookList books={books} />
     </div>
   );
 }
