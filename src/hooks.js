@@ -7,6 +7,10 @@ export const useRemoteService = (initial) => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+<<<<<<< HEAD
+=======
+        console.log('inside use effect in remote service hook')
+>>>>>>> 1413a4ac75ff574c3691b5b56413919e795b269a
         const fetchBooks = async () => {
             setError(false);
             setLoading(true);
