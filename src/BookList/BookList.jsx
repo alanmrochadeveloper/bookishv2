@@ -12,7 +12,7 @@ const BookList = ({ books, loading, error }) => {
 			{books.map((book) => (
 				<div className='book-item' key={book.name}>
 					<h2 className='title'>{book.name}</h2>
-					<a href={`/books/${book.id}`}>View Details</a>
+					<a href={`/books/${book?.id}`}>View Details</a>
 				</div>
 			))}
 		</div>
