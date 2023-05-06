@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useRemoteService } from './hooks';
+import { useRemoteService } from '../hooks';
 import { useParams } from 'react-router';
 import BookDetail from './BookDetail';
 const BookDetailContainer = () => {
   const params = useParams();
   const { id } = params;
-  const { data } = useRemoteService(`http://locahost:8080/books/${id}`, {})
+  const { data } = useRemoteService(`http://localhost:8080/books/${id}`, {})
   const [book, setBook] = useState({});
 
   useEffect(() => {
@@ -13,11 +13,10 @@ const BookDetailContainer = () => {
       setBook(data);
     }
     fetchBook()
-  }, [id])
+  }, [id, data])
 
   return (
-    <BookDetail book={book} />
-  )
+    <BookDetail book={book} />)
 }
 
 export default BookDetailContainer;
