@@ -21,16 +21,17 @@ describe('BookList', () => {
         const content = container.querySelector('p');
         expect(content.innerHTML).toContain('Error')
     })
-    
+
     it('render books', () => {
         const props = {
             books: [
-                {'name': 'Refactoring', 'id': 1},
-                {'name': 'Domain-driven design', 'id': 2},
+                { 'name': 'Refactoring', 'id': 1 },
+                { 'name': 'Domain-driven design', 'id': 2 },
             ]
         }
         const { container } = render(<BookList {...props} />);
-        const titles = [...container.querySelectorAll('h2')].map( x => x.innerHTML);
+        const titles = [...container.querySelectorAll('h2')].map(x => x.innerHTML);
+        console.log({ titles })
         expect(titles).toEqual(['Refactoring', 'Domain-driven design'])
     })
 });
